@@ -4,6 +4,10 @@ Bytes Convert
 
 ----------------------------------
 
+##	Get
+
+go get github.com/everfore/bconv
+
 ##	Define
 
 json represents for interface{}, for instance struct, map, slice.
@@ -20,7 +24,7 @@ bson to json, using json.Marshal
 
 ###		jsonbytes <--X--> bsonbytes
 
-Well, jsonbytes is not bsonbytes. They are different []byte.
+Well, jsonbytes do not equal bsonbytes. They are different []byte.
 
 We can not use string(bsonbytes) as string.
 
