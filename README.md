@@ -1,4 +1,4 @@
-# 	bconv
+# 	bconv [![](http://gocover.io/_badge/github.com/everfore/bconv)](http://gocover.io/github.com/everfore/bconv)
 
 Bson & Json Bytes Convert
 
