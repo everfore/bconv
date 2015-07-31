@@ -1,12 +1,16 @@
 # 	bconv
 
-Bytes Convert
+Bson & Json Bytes Convert
 
 ----------------------------------
 
 ##	Get
 
-go get github.com/everfore/bconv
+		go get github.com/everfore/bconv
+
+###		3rd party pkg 
+
+		go get labix.org/v2/mgo/bson
 
 ##	Define
 
@@ -75,7 +79,3 @@ We can not use string(bsonbytes) as string.
 
 		jb := j.Bson()
 		t.Log(jb)
-
-##		Dependency pkg from 3rd party
-
-		go get labix.org/v2/mgo/bson
