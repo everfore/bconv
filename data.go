@@ -2,6 +2,7 @@ package bconv
 
 import (
 	"encoding/json"
+	"fmt"
 	"labix.org/v2/mgo/bson"
 )
 
@@ -50,11 +51,7 @@ func Bson2Json(m *bson.M, i interface{}) error {
 	if isError(err) {
 		return err
 	}
-	err = json.Unmarshal(b, &i)
-	if isError(err) {
-		return err
-	}
-	return nil
+	return json.Unmarshal(b, &i)
 }
 
 // Bson to Json,InterfaceP{} by BsonBytes
@@ -64,11 +61,7 @@ func _Bson2Json(m *bson.M, i interface{}) error {
 	if isError(err) {
 		return err
 	}
-	err = bson.Unmarshal(b, &i)
-	if isError(err) {
-		return err
-	}
-	return nil
+	return bson.Unmarshal(b, &i)
 }
 
 // Json,Interface{} to Bson by JsonBytes
@@ -104,6 +97,7 @@ func I2I(j interface{}, i interface{}) error {
 
 func isError(err error) bool {
 	if nil != err {
+		fmt.Println(err)
 		return true
 	}
 	return false
