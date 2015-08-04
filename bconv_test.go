@@ -18,68 +18,106 @@ var (
 	}
 )
 
-func TestJson(t *testing.T) {
+// func TestJson(t *testing.T) {
+// 	j := NewJson(testJson)
+// 	jbbs := j.BBytes()
+// 	t.Log(jbbs)
+
+// 	jjbs := j.JBytes()
+// 	t.Log(jjbs)
+
+// 	jb := j.Bson()
+// 	t.Log(jb)
+// }
+
+// func TestBson(t *testing.T) {
+// 	b := NewBson(testBson)
+// 	bbbs := b.BBytes()
+// 	t.Log(bbbs)
+
+// 	bjbs := b.JBytes()
+// 	t.Log(bjbs)
+
+// 	bj := b.Json()
+// 	t.Log(bj)
+// }
+
+// func TestBsonJson(t *testing.T) {
+// 	b := NewBson(testBson)
+// 	bbbs := b.BBytes()
+// 	t.Log(bbbs)
+
+// 	bjbs := b.JBytes()
+// 	t.Log(bjbs)
+
+// 	bj := b.Json()
+// 	t.Log(bj)
+
+// 	jbbs := bj.BBytes()
+// 	t.Log(jbbs)
+
+// 	jjbs := bj.JBytes()
+// 	t.Log(jjbs)
+
+// 	jb := bj.Bson()
+// 	t.Log(jb)
+// }
+
+// func TestJsonBson(t *testing.T) {
+// 	j := NewJson(testJson)
+// 	jbbs := j.BBytes()
+// 	t.Log(jbbs)
+
+// 	jjbs := j.JBytes()
+// 	t.Log(jjbs)
+
+// 	jb := j.Bson()
+// 	t.Log(jb)
+
+// 	bbbs := jb.BBytes()
+// 	t.Log(bbbs)
+
+// 	bjbs := jb.JBytes()
+// 	t.Log(bjbs)
+
+// 	bj := jb.Json()
+// 	t.Log(bj)
+// }
+
+func TestJConv(t *testing.T) {
 	j := NewJson(testJson)
-	jbbs := j.BBytes()
-	t.Log(jbbs)
+	t.Logf("%#v", j.Jv)
 
-	jjbs := j.JBytes()
-	t.Log(jjbs)
+	type Java struct {
+		Name string
+	}
 
-	jb := j.Bson()
-	t.Log(jb)
+	var java0 Java
+	err0 := j.Conv(&java0)
+	log_err(err0, t)
+	t.Logf("%#v", java0)
+
+	var java Java
+	err := j.Bson().Conv(&java)
+	log_err(err, t)
+	t.Logf("%#v", java)
 }
 
-func TestBson(t *testing.T) {
+func TestBConv(t *testing.T) {
 	b := NewBson(testBson)
-	bbbs := b.BBytes()
-	t.Log(bbbs)
+	t.Logf("%#v", b.Bv)
 
-	bjbs := b.JBytes()
-	t.Log(bjbs)
+	type Java struct {
+		Name string
+	}
 
-	bj := b.Json()
-	t.Log(bj)
-}
+	var java0 Java
+	err0 := b.Conv(&java0)
+	log_err(err0, t)
+	t.Logf("%#v", java0)
 
-func TestBsonJson(t *testing.T) {
-	b := NewBson(testBson)
-	bbbs := b.BBytes()
-	t.Log(bbbs)
-
-	bjbs := b.JBytes()
-	t.Log(bjbs)
-
-	bj := b.Json()
-	t.Log(bj)
-
-	jbbs := bj.BBytes()
-	t.Log(jbbs)
-
-	jjbs := bj.JBytes()
-	t.Log(jjbs)
-
-	jb := bj.Bson()
-	t.Log(jb)
-}
-
-func TestJsonBson(t *testing.T) {
-	j := NewJson(testJson)
-	jbbs := j.BBytes()
-	t.Log(jbbs)
-
-	jjbs := j.JBytes()
-	t.Log(jjbs)
-
-	jb := j.Bson()
-	t.Log(jb)
-
-	bbbs := jb.BBytes()
-	t.Log(bbbs)
-
-	bjbs := jb.JBytes()
-	t.Log(bjbs)
-
-	bj := jb.Json()
-	t.Log(bj)
+	var java Java
+	err := b.Json().Conv(&java)
+	log_err(err, t)
+	t.Logf("%#v", java)
 }

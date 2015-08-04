@@ -46,6 +46,10 @@ func (j *Json) BBytes() []byte {
 	return b
 }
 
+func (j *Json) Conv(i interface{}) error {
+	return I2I(j.Jv, &i)
+}
+
 func (j *Json) Bson() *Bson {
 	Bv, err := Json2Bson(j.Jv)
 	if isError(err) {
@@ -77,4 +81,8 @@ func (b *Bson) Json() *Json {
 		return nil
 	}
 	return NewJson(i)
+}
+
+func (b *Bson) Conv(i interface{}) error {
+	return I2I(b.Bv, &i)
 }
