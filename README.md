@@ -79,3 +79,17 @@ We can not use string(bsonbytes) as string.
 
 		jb := j.Bson()
 		t.Log(jb)
+
+###		Conv
+	
+	var java Java
+
+1.	Json Conv
+
+	err := j.Conv(&java)
+	err := b.Json().Conv(&java)
+	
+2.	Bson Conv
+
+	err := j.Bson().Conv(&java)
+	err := b.Conv(&java)

@@ -18,71 +18,71 @@ var (
 	}
 )
 
-// func TestJson(t *testing.T) {
-// 	j := NewJson(testJson)
-// 	jbbs := j.BBytes()
-// 	t.Log(jbbs)
+func TestJson(t *testing.T) {
+	j := NewJson(testJson)
+	jbbs := j.BBytes()
+	t.Log(jbbs)
 
-// 	jjbs := j.JBytes()
-// 	t.Log(jjbs)
+	jjbs := j.JBytes()
+	t.Log(jjbs)
 
-// 	jb := j.Bson()
-// 	t.Log(jb)
-// }
+	jb := j.Bson()
+	t.Log(jb)
+}
 
-// func TestBson(t *testing.T) {
-// 	b := NewBson(testBson)
-// 	bbbs := b.BBytes()
-// 	t.Log(bbbs)
+func TestBson(t *testing.T) {
+	b := NewBson(testBson)
+	bbbs := b.BBytes()
+	t.Log(bbbs)
 
-// 	bjbs := b.JBytes()
-// 	t.Log(bjbs)
+	bjbs := b.JBytes()
+	t.Log(bjbs)
 
-// 	bj := b.Json()
-// 	t.Log(bj)
-// }
+	bj := b.Json()
+	t.Log(bj)
+}
 
-// func TestBsonJson(t *testing.T) {
-// 	b := NewBson(testBson)
-// 	bbbs := b.BBytes()
-// 	t.Log(bbbs)
+func TestBsonJson(t *testing.T) {
+	b := NewBson(testBson)
+	bbbs := b.BBytes()
+	t.Log(bbbs)
 
-// 	bjbs := b.JBytes()
-// 	t.Log(bjbs)
+	bjbs := b.JBytes()
+	t.Log(bjbs)
 
-// 	bj := b.Json()
-// 	t.Log(bj)
+	bj := b.Json()
+	t.Log(bj)
 
-// 	jbbs := bj.BBytes()
-// 	t.Log(jbbs)
+	jbbs := bj.BBytes()
+	t.Log(jbbs)
 
-// 	jjbs := bj.JBytes()
-// 	t.Log(jjbs)
+	jjbs := bj.JBytes()
+	t.Log(jjbs)
 
-// 	jb := bj.Bson()
-// 	t.Log(jb)
-// }
+	jb := bj.Bson()
+	t.Log(jb)
+}
 
-// func TestJsonBson(t *testing.T) {
-// 	j := NewJson(testJson)
-// 	jbbs := j.BBytes()
-// 	t.Log(jbbs)
+func TestJsonBson(t *testing.T) {
+	j := NewJson(testJson)
+	jbbs := j.BBytes()
+	t.Log(jbbs)
 
-// 	jjbs := j.JBytes()
-// 	t.Log(jjbs)
+	jjbs := j.JBytes()
+	t.Log(jjbs)
 
-// 	jb := j.Bson()
-// 	t.Log(jb)
+	jb := j.Bson()
+	t.Log(jb)
 
-// 	bbbs := jb.BBytes()
-// 	t.Log(bbbs)
+	bbbs := jb.BBytes()
+	t.Log(bbbs)
 
-// 	bjbs := jb.JBytes()
-// 	t.Log(bjbs)
+	bjbs := jb.JBytes()
+	t.Log(bjbs)
 
-// 	bj := jb.Json()
-// 	t.Log(bj)
-// }
+	bj := jb.Json()
+	t.Log(bj)
+}
 
 func TestJConv(t *testing.T) {
 	j := NewJson(testJson)
