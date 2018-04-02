@@ -3,7 +3,7 @@ package bconv
 import (
 	"encoding/json"
 	"fmt"
-	"labix.org/v2/mgo/bson"
+	"gopkg.in/mgo.v2/bson"
 )
 
 func Bson2BsonBytes(m *bson.M) (b []byte, err error) {
